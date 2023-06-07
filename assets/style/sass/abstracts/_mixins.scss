@@ -1,0 +1,168 @@
+/*----------------------------------------------------------
+    File Name  : _mixin.scss
+    Desc       : File ini merupakan file untuk membuat mixin / gabungan bebebrapa property
+                 nanti akan digunakan secara berulang di file lain
+                 Mixin sama seperti function di bahasa pemrogranan
+
+    Cara Pakai : Panggil directory ini dengan @use '../abstracts/mixins' as mix
+                 di file yang akan menggunakan mixins
+                 @include mix.sm {...property}
+                 
+
+------------------------------------------------------------*/ 
+
+@use './variables' as var;
+
+/**
+ * TABLE OF CONTENTS
+ *
+ * 1. Layouting
+ * 2. Coloring
+ * 3. Sizing
+ * 4. Breakpoints
+ *
+ */
+ 
+
+/*----------------------------------------------------------
+1. Layouting Start
+------------------------------------------------------------*/ 
+
+@mixin flex-tengah {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-atas-bawah {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/*----------------------------------------------------------
+1. Layouting End
+------------------------------------------------------------*/ 
+
+/*----------------------------------------------------------
+2. Coloring End
+------------------------------------------------------------*/ 
+@mixin text-gradient($left: rgba(255, 255, 255, 1), $right: rgba(255, 255, 255, 0.65) ){
+    background: -webkit-linear-gradient(0deg, $left 50%, $right 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/*----------------------------------------------------------
+2. Coloring End
+------------------------------------------------------------*/ 
+
+
+
+/*----------------------------------------------------------
+4. Breakpoints Start
+------------------------------------------------------------*/ 
+
+
+// 375 - 576
+@mixin and-sm {
+    @media screen and (min-width: #{var.$screen-sm-min}) and (max-width: #{var.$screen-sm-max}) {
+        @content;
+    }
+}
+
+// 577 - 768
+@mixin and-md {
+    @media screen and (min-width: #{var.$screen-md-min}) and (max-width: #{var.$screen-md-max}) {
+        @content;
+    }
+}
+
+// 796 - 992
+@mixin and-lg {
+    @media screen and (min-width: #{var.$screen-lg-min}) and (max-width: #{var.$screen-lg-max}) {
+        @content;
+    }
+}
+
+// 993 - 1024
+@mixin and-xl {
+    @media screen and (min-width: #{var.$screen-xl-min}) and (max-width: #{var.$screen-xl-max}) {
+        @content;
+    }
+}
+
+// 1025 - 1200
+@mixin and-xl2 {
+    @media screen and (min-width: #{var.$screen-xl2-min}) and (max-width: #{var.$screen-xl2-max}) {
+        @content;
+    }
+}
+
+// 1201 - 1400
+@mixin and-xl3 {
+    @media screen and (min-width: #{var.$screen-xl3-min}) and (max-width: #{var.$screen-xl3-max}) {
+        @content;
+    }
+}
+
+
+
+
+/*----------------------------------------------------------
+//  Untuk Media Query Min Width untuk mengubah suatu
+// ukuran tertentu dan seterusnya sampai ukuran terbesar
+------------------------------------------------------------*/ 
+
+// 375
+@mixin sm {
+    @media (min-width: #{var.$screen-sm-min}) {
+        @content;
+    }
+}
+
+// 576
+@mixin md {
+    @media (min-width: #{var.$screen-md-max}) {
+        @content;
+    }
+}
+
+// 768
+@mixin lg {
+    @media (min-width: #{var.$screen-md-max}) {
+        @content;
+    }
+}
+
+// 992
+@mixin xl {
+    @media (min-width: #{var.$screen-lg-max}) {
+        @content;
+    }
+}
+
+
+// 1024
+@mixin xl2 {
+    @media (min-width: #{var.$screen-xl-max}) {
+        @content;
+    }
+}
+
+// 1200
+@mixin xl3 {
+    @media (min-width: #{var.$screen-xl2-max}) {
+        @content;
+    }
+}
+
+// 1400
+@mixin xl4 {
+    @media (min-width: #{var.$screen-xl3-max}) {
+        @content;
+    }
+}
+
+/*----------------------------------------------------------
+4. Breakpoints End
+------------------------------------------------------------*/ 

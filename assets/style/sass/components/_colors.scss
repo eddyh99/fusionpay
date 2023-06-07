@@ -1,0 +1,61 @@
+/*----------------------------------------------------------
+    File Name  : _colors.scss
+    Desc       : File ini merupakan styling untuk 
+                 Color yang dapat dipanggil secara berulang
+
+------------------------------------------------------------*/ 
+
+/**
+ * TABLE OF CONTENTS
+ *
+ * 1. Text Color
+ * 2. Background Color
+ *
+ */
+
+ @use '../abstracts/variables' as var;
+
+
+ /*----------------------------------------------------------
+1. Text Color Start 
+------------------------------------------------------------*/ 
+
+.text-primary-fusion {
+    color: var.$text-primary-fusion;
+}
+
+.text-primary-darken-fusion {
+    color: var.$text-primary-darken-fusion;
+}
+
+.text-secondary-fusion {
+    color: var.$text-secondary-fusion;
+}
+
+
+/*----------------------------------------------------------
+1. Text Color End
+------------------------------------------------------------*/ 
+
+ /*----------------------------------------------------------
+2. Background Color Start
+------------------------------------------------------------*/ 
+.bg-primary-fusion {
+    background-color: var.$bg-primary-fusion;
+}
+
+.bg-primary-darken-fusion {
+    background-color: var.$bg-primary-darken-fusion;
+}
+
+.bg-primary-login-fusion {
+    background-color: var.$bg-primary-login-fusion;
+}
+
+.bg-secondary-fusion {
+    background-color: var.$bg-secondary-fusion;
+}
+
+/*----------------------------------------------------------
+2. Background Color End
+------------------------------------------------------------*/ 

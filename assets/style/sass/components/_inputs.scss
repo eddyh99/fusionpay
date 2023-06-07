@@ -1,0 +1,30 @@
+/*----------------------------------------------------------
+    File Name  : _inputs.scss
+    Desc       : File ini merupakan styling untuk 
+                 Input yang dapat dipanggil secara berulang
+
+------------------------------------------------------------*/ 
+
+/**
+ * TABLE OF CONTENTS
+ *
+ * 1. Input Login & Register
+ *
+ */
+
+ @use '../abstracts/variables' as var;
+
+
+ /*----------------------------------------------------------
+1. Text Input Login & Register Start 
+------------------------------------------------------------*/ 
+.input-login {
+    height: 50px;
+    width: 100%;
+    background-color: var.$bg-primary-fusion;
+    text-align: center; 
+}
+
+ /*----------------------------------------------------------
+1. Text Input Login & Register End 
+------------------------------------------------------------*/ 

@@ -1,0 +1,48 @@
+/*----------------------------------------------------------
+    File Name  : _navbar.scss
+    Desc       : File ini merupakan styling untuk 
+                 Component Button yang akan dipakai berulang
+
+------------------------------------------------------------*/ 
+
+/**
+ * TABLE OF CONTENTS
+ *
+ * 1. Buttons Login & Registrasi
+ *
+ */
+
+ @use '../abstracts/variables' as var;
+
+
+ /*----------------------------------------------------------
+1. Buttons Login & Registrasi Start 
+------------------------------------------------------------*/ 
+.btn-primary-fusion {
+    color: var.$text-secondary-fusion;
+    background-color: var.$bg-primary-fusion;
+    
+    &:hover {
+        color: var.$text-secondary-fusion;
+    }
+}
+
+.btn-login {
+    color: var.$text-primary-fusion;
+    background-color: var.$bg-primary-login-fusion;
+    border-radius: 10px;
+    padding: 10px 80px;
+    
+    &:hover {
+        color: var.$text-primary-fusion;
+        background-color: var.$bg-primary-darken-fusion;
+    }
+}
+
+ /*----------------------------------------------------------
+1. Buttons Login & Registrasi End 
+------------------------------------------------------------*/ 
+
+
+
+

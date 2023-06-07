@@ -1,0 +1,477 @@
+/*----------------------------------------------------------
+    File Name  : _landing-pages.scss
+    Desc       : File ini merupakan styling untuk Landing Page
+
+------------------------------------------------------------*/ 
+
+/**
+ * TABLE OF CONTENTS
+ *
+ * 1. Banner Landing Page
+ * 2. Card Landing Page
+ * 3. Debit Card Page
+ * 4. Immediate Access Page
+ *
+ * * * * * * * * * * * * * * * 
+ * 5. Link Landing
+ *
+ */
+
+
+ @use '../abstracts/variables' as var;
+ @use '../abstracts/mixins' as mix;
+ 
+/*----------------------------------------------------------
+1. Banner Landing Page Start
+------------------------------------------------------------*/ 
+
+// #banner-landing{
+//     background-image: url('../../img/banner.webp');
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-size: cover;
+//     height: 500px;
+//     width: 100%;
+
+// }
+ 
+/*----------------------------------------------------------
+1. Banner Landing Page End
+------------------------------------------------------------*/ 
+
+
+/*----------------------------------------------------------
+2. Card Landing Page Start 
+------------------------------------------------------------*/ 
+#card-landing {
+    background-color: var.$bg-secondary-cayman;
+}
+
+
+.card {
+    border-radius: 16px;
+    border: none !important;
+    background-color: transparent ;
+}
+
+.card-landing {
+    border-radius: 16px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border: none !important;
+    
+    &:hover{
+        border: none !important;
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front, 
+    .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border: none !important;
+        border-radius: 16px;
+    }
+
+    .flip-card-front {
+        background-color: rgba(70, 158, 100, 1);
+        @include mix.flex-tengah();
+
+        div {
+            top: -10px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    }
+      
+    .flip-card-back {
+        background-color: rgb(255, 255, 255);
+        transform: rotateY(180deg);
+        border: none !important;
+        @include mix.flex-tengah();
+
+        div {
+            ul {
+                li {
+                    background: url('../../img/line.png') no-repeat left 1px;
+                    background-size: 10px !important;
+                    padding: 0 0 0 1rem;
+                    margin: 0;
+                    margin-left: 10px;
+                    margin-bottom: 1rem;
+                    list-style: none;
+                    line-height: 30px;
+
+                    a {
+                        &:hover {
+                            color: rgba(54, 170, 44, 1);
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+    .card-landing-two & {
+        background-color: rgba(105, 194, 91, 1);
+    }
+    .card-landing-three & {
+        background-color: rgba(154, 224, 148, 1);
+    }
+
+
+
+    @include mix.flex-atas-bawah();
+}
+/*----------------------------------------------------------
+2. Card Landing Page End 
+------------------------------------------------------------*/ 
+
+/*----------------------------------------------------------
+3. Debit Card Page Start 
+------------------------------------------------------------*/ 
+.debit-card-box {
+    box-shadow: inset 0px 2px 8px rgba(0, 0, 0, 0.25);
+    padding: 30px 30px 30px 30px;
+    
+    @include mix.xl {
+        padding: 30px 100px 30px 30px;
+        margin-right: 100px;
+    }
+}
+/*----------------------------------------------------------
+3. Debit Card Page End 
+------------------------------------------------------------*/ 
+
+
+/*----------------------------------------------------------
+4. Immediate Access Page Start 
+------------------------------------------------------------*/ 
+#immediate-access {
+    background-color: rgba(20, 37, 24, 1);
+    color: rgb(255, 255, 255);
+    padding: 30px 0px;
+}
+
+#bg-form-immediate {
+    background-image: url('../../img/bg-immediate.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    margin: 80px 0px 50px 0px;
+}
+
+.text-immediate {
+    font-weight: 700;
+    @include mix.text-gradient();
+}
+
+.text-form-info {
+    color: white;
+    font-family: 12px;
+    
+    span {
+        &:nth-child(3) {
+            color: var.$text-primary-light-cayman;
+        }
+    }
+}
+
+.radio-getouch {
+    background-color: transparent;
+    border: 1px solid rgba(224, 224, 224, 1);
+    padding: 15px 15px 15px 20px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+
+    @include mix.xl {
+        width: 95%;
+    }
+
+
+    div {
+        flex-direction: column;
+
+
+        @include mix.lg {
+            flex-direction: row;
+        }
+
+        @include mix.xl {
+            flex-direction: column;
+        }
+
+        @include mix.xl2 {
+            flex-direction: row;
+        }
+
+        .in-radio-getouch {
+            background-color: transparent;
+            border: 1px solid rgba(224, 224, 224, 1);
+            padding: 15px 100px 15px 20px;
+            width: 25%;
+            color: rgb(255, 255, 255);
+        }
+
+    }
+}
+
+.b-telp {
+    width: 100%;
+
+    @include mix.xl {
+        width: 95%;
+    }
+
+
+    .in-telp {
+        color: var.$text-primary-cayman;
+    
+        .nohp-select {
+            width: 100%;
+            height: 60px;
+            font-weight: 600;
+            color: rgba(224, 224, 224, 1);
+            background-color: transparent;
+            border: 2px solid rgb(255, 255, 255);
+    
+            &::placeholder {
+                color: rgb(255, 255, 255);
+            }
+        }
+    
+        input-nohp{
+            color: #949494;
+            font-weight: 400 !important;
+            width: 100%;
+          }
+    
+    }
+}
+
+
+.date-getouch {
+    width: 100%;
+
+    @include mix.xl {
+        width: 95%;
+    }
+
+
+    input {
+        width: 45%;
+    }
+}
+
+
+.in-getouch {
+    background-color: transparent;
+    border: 1px solid rgba(224, 224, 224, 1);
+    padding: 15px 100px 15px 20px;
+    width: 95%;
+    color: rgb(255, 255, 255);
+}
+
+/*----------------------------------------------------------
+4. Immediate Access Page End 
+------------------------------------------------------------*/ 
+
+/*----------------------------------------------------------
+5. Link Landing Start 
+------------------------------------------------------------*/ 
+#banner-landing .container {
+    height: 900px;
+
+    @include mix.lg {
+        height: 950px;
+    }
+
+    @include mix.xl {
+        height: 350px;
+    }
+
+
+}
+
+.bank-banner {
+    position: relative;
+    h1 {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.see-more-bank {
+    position: relative;
+    top: -35px;
+    border-radius: 10px;
+}
+
+.card-bank-wrap {
+    position: relative;
+    top: -220px;
+    
+    @include mix.lg {
+        top: -165px;
+    }
+
+    @include mix.xl {
+        top: -250px;
+    }
+
+    .card-bank-landing-one {
+        background-color: rgba(240, 240, 240, 1);
+        color: rgb(0, 0, 0);
+        width: auto;
+        height: 18rem;
+        transition: all 0.4s ease;
+
+        &.aktif {
+            background-color: rgba(6, 99, 60, 1);
+            color: rgb(255, 255, 255);
+        }
+        
+        &:hover{
+            background-color: rgba(6, 99, 60, 1);
+            color: rgb(255, 255, 255);
+        }
+
+        @include mix.xl {
+            width: 18rem;
+            height: 24rem;
+        }
+
+        @include mix.xl3 {
+            width: 22rem;
+        }
+
+        @include mix.xl4 {
+            width: 24rem;
+        }
+
+
+        .card-bank-landing {
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+        
+        }
+    }
+}
+
+.ency-bank-box {
+    box-shadow: inset 0px 2px 8px rgba(0, 0, 0, 0.25);
+    padding: 20px 20px 20px 20px;
+    margin: 10px 10px 10px 10px;
+
+    @include mix.xl {
+        padding: 20px 40px 10px 20px;
+        margin: 10px 0px 10px 20px;
+    } 
+}
+
+
+.bank-checked {
+    ul {
+        li {
+            background: url('../../img/checked-maker.png') no-repeat left 3px;
+            background-size: 25px !important;
+            padding: 0 0 0 2rem;
+            margin: 0;
+            margin-left: 30px;
+            margin-bottom: 1rem;
+            list-style: none;
+            color: #757575;
+            line-height: 30px;
+        }
+    }
+}
+
+.b-workus {
+    width: auto;
+    height: 180px;
+    border: 2px solid rgba(195, 206, 226, 1);
+    margin: 5px 0px;
+    padding: 30px 30px 30px 30px;
+    border-radius: 6px;
+
+    p {
+        cursor: default;
+    }
+}
+
+.b-workus:hover {
+    background-color: var.$bg-secondary-cayman;
+}
+
+
+.card-price {
+    width: auto;
+    height: 600px;
+    box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.25), 1px 1px 4px rgba(0, 0, 0, 0.25);
+    margin: 5px 10px;
+    padding: 30px 30px 30px 30px;
+    border-radius: 12px;
+    
+    @include mix.xl{
+        padding: 30px 30px 30px 30px;
+        margin: 5px 10px;
+
+    }
+}
+
+#bg-mission {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 90%;
+    
+    @include mix.sm{
+        width: 40%;
+    }
+
+    @include mix.md{
+        width: 25%;
+    }
+}
+
+.bab-circle {
+    li {
+        list-style: disc;
+        margin-left: 40px;
+    }
+}
+
+.bg-contact-notif {
+    height: 100vh;
+    overflow-y: scroll !important;
+    background-color: #ffffff;      
+}
+
+.bg-booking {
+    background-color: rgba(245, 246, 248, 1);
+    height: 100%;
+}
+
+.text-booking-agreement {
+    line-height: 150%;
+}
+
+/*----------------------------------------------------------
+5. Link Landing End 
+------------------------------------------------------------*/ 

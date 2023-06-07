@@ -1,0 +1,85 @@
+/*----------------------------------------------------------
+    File Name  : _admin-pages.scss
+    Desc       : File ini merupakan styling untuk Admin Pages
+
+------------------------------------------------------------*/ 
+
+/**
+ * TABLE OF CONTENTS
+ *
+ * 1. Library Use
+ * 2. Login & Register Page
+ *
+ */
+
+
+ @use '../abstracts/variables' as var;
+ @use '../abstracts/mixins' as mix;
+ 
+/*----------------------------------------------------------
+1. Library Use Start
+------------------------------------------------------------*/ 
+.splide__slide img {
+    width: 100%;
+    margin: 0 auto;
+    height: 300px;
+    object-fit: fit;
+}
+/*----------------------------------------------------------
+1. Library Use End
+------------------------------------------------------------*/ 
+
+
+/*----------------------------------------------------------
+2. Login & Register Page Start
+------------------------------------------------------------*/ 
+.login.wrapper {
+    overflow-x: hidden;
+    div {
+        border-radius: 25px;
+    }
+}
+
+
+.bg-contact-wrap {
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.bg-contact {
+    background-color: var.$bg-primary-login-fusion;
+    height: 100%;
+}
+
+.forgot-login {
+    font-size: 13px;
+}
+
+.title-side-login {
+    font-size: 36px;
+    
+    @include mix.xl2 {
+        font-size: 36px;
+    }
+    
+    @include mix.xl3 {
+        font-size: 48px;
+    }
+}
+.title-side-login-small {
+    font-size: 32px;
+    
+    @include mix.xl2 {
+        font-size: 32px;
+    }
+    
+    @include mix.xl3 {
+        font-size: 40px;
+    }
+}
+
+/*----------------------------------------------------------
+2. Login & Register Page End
+------------------------------------------------------------*/ 
+
+
