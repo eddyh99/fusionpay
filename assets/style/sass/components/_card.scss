@@ -1,0 +1,34 @@
+/*----------------------------------------------------------
+    File Name  : _card.scss
+    Desc       : File ini merupakan styling untuk 
+                 Component Card yang akan dipakai berulang
+
+------------------------------------------------------------*/ 
+
+/**
+ * TABLE OF CONTENTS
+ *
+ * 1. Card
+ *
+ */
+
+ @use '../abstracts/variables' as var;
+
+
+ /*----------------------------------------------------------
+1. Card Start 
+------------------------------------------------------------*/ 
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: none;
+    border-radius: 2rem;
+}
+ /*----------------------------------------------------------
+1. Card End 
+------------------------------------------------------------*/ 
