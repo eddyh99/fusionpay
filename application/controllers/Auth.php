@@ -18,6 +18,57 @@ class Auth extends CI_Controller
 
 	public function index()
 	{
+		
+		if (isset($this->session->userdata['logged_status'])) {
+			redirect("admin/dashboard");
+		}
+
+		$data	= array(
+            'title'		 	=> NAMETITLE . ' - Login',
+            'content'	 	=> 'auth/login',
+			'extra'		    => 'auth/js/js_index'
+		);
+
+		$this->load->view('tamplate/wrapper', $data);
+	}
+
+	public function auth_login()
+	{
+		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->session->set_flashdata('error', $this->message->error_msg(validation_errors()));
+			redirect("/");
+			return;
+		}
+
+		$email = $this->security->xss_clean($this->input->post('email'));
+		$password = $this->security->xss_clean($this->input->post('password'));
+
+		
+		$result= array(
+			"email"		=> $email,
+			"password"	=> $password
+		);
+		// print_r($result);
+		// die;
+
+		if (!empty($result)) {
+			$session_data = array(
+				'email'     	=> $result->email,
+				'password'      => $result->password,
+				'is_login'  	=> true
+			);
+			$this->session->set_userdata('logged_status', $session_data);
+			redirect('admin/dashboard');
+		} else {
+			$this->session->set_flashdata('error', "username atau password salah, mohon periksa ulang");
+			redirect("/");
+			return;
+		}
+
+
 		$data	= array(
             'title'		 	=> NAMETITLE . ' - Login',
             'content'	 	=> 'auth/login',
@@ -108,7 +159,10 @@ class Auth extends CI_Controller
 		$this->load->view('tamplate/wrapper', $data);
 	}
 
-
-
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect('/');
+	}
 
 }

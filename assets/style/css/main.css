@@ -12557,6 +12557,7 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
+  overflow: hidden;
 }
 
 a {
@@ -12729,8 +12730,8 @@ p {
 .splide__slide img {
   width: 100%;
   margin: 0 auto;
-  height: 300px;
-  object-fit: fit;
+  height: 150px;
+  object-fit: cover;
 }
 
 /*----------------------------------------------------------
@@ -12740,20 +12741,77 @@ p {
 2. Login & Register Page Start
 ------------------------------------------------------------*/
 .login.wrapper {
-  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+  padding: 30px 0px;
 }
-.login.wrapper div {
+@media (min-width: 992px) {
+  .login.wrapper {
+    overflow-y: hidden;
+  }
+}
+.login.wrapper > div {
+  overflow: scroll;
+  height: fit-content;
   border-radius: 25px;
+  padding: 20px 0px;
+}
+@media (min-width: 992px) {
+  .login.wrapper > div {
+    overflow: hidden;
+    height: 85vh;
+    border-radius: 25px;
+    padding: 0px;
+  }
+}
+.login.wrapper > div .right-side {
+  height: 95%;
+  margin-left: 0px;
+  overflow-y: scroll;
+  padding: 0px 20px;
+}
+.login.wrapper > div .right-side::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .login.wrapper > div .right-side {
+    padding: 0px 50px;
+  }
+}
+@media (min-width: 1024px) {
+  .login.wrapper > div .right-side {
+    margin-left: 350px;
+    width: 63%;
+  }
+}
+@media (min-width: 1200px) {
+  .login.wrapper > div .right-side {
+    margin-left: 420px;
+  }
 }
 
 .bg-contact-wrap {
-  min-height: 100vh;
-  padding: 30px;
+  padding: 20px;
+  height: 90%;
+  width: 400px;
+  position: fixed;
+  z-index: 1;
+}
+@media (min-width: 1024px) {
+  .bg-contact-wrap {
+    width: 350px;
+  }
+}
+@media (min-width: 1200px) {
+  .bg-contact-wrap {
+    width: 420px;
+  }
 }
 
 .bg-contact {
   background-color: rgb(203, 224, 255);
-  height: 100%;
+  border-radius: 25px;
+  height: 95%;
 }
 
 .forgot-login {
@@ -12775,16 +12833,16 @@ p {
 }
 
 .title-side-login-small {
-  font-size: 32px;
+  font-size: 24px;
 }
 @media (min-width: 1024px) {
   .title-side-login-small {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 @media (min-width: 1200px) {
   .title-side-login-small {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 

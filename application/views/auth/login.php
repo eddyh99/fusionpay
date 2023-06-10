@@ -1,20 +1,20 @@
 <div class="login wrapper bg-secondary-fusion">
-    <div class="row bg-white m-5">
-        <div class="col-6 col-xxl-5 d-none d-xl-block bg-contact-wrap position-relative">
+    <div class="row bg-white col-11 col-xxl-9 mx-auto">
+        <div class="d-none col-lg-3 d-xl-block bg-contact-wrap">
             <div class="bg-contact">
-                <div class="h-100 w-100 text-black">
-                    <div class="pt-4 h-100 d-flex flex-column justify-content-between align-items-start">
+                <div class="text-black h-100">
+                    <div class="pt-4 d-flex flex-column h-100 justify-content-between align-items-start">
                         <div>
-                            <a href="" class="ps-4 mb-5 pb-5 w-25">
+                            <a href="" class="ps-4 mb-5 w-25">
                                 <img class="img-fluid w-50" src="<?= base_url()?>assets/img/logo.png" alt="logo">                
                             </a>
-                            <div class="w-100 ps-4 pt-5">
-                                <h1 class="title-side-login w-100 fw-normal f-poppins ps-4">
-                                    Start your <br>
-                                    <span class="ps-5 ms-4 title-side-login-small">
+                            <div class="w-100 ps-2 pt-4">
+                                <h4 class="title-side-login w-100 fw-normal f-poppins ps-4">
+                                    Start your<br>
+                                    <span class="ps-5 ms-3 title-side-login-small">
                                         jurney with us
                                     </span>
-                                </h1>
+                                </h4>
                             </div>
                         </div>
                         <div class="px-4 pb-5">
@@ -38,21 +38,32 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-xl-6 col-xxl-7 my-5 pt-3 px-5">
+        <div class="col-12 col-xl-7 right-side">
             <div class="img-fluid">
-                <form>
+                <form method="POST" action="<?= base_url()?>auth/auth_login">
+                    <span>
+                        <img class="d-block d-xl-none img-fluid w-50 pt-4" src="<?= base_url()?>assets/img/logo.png" alt="logo">   
+                    </span>
                     <h1 class="fw-semibold f-poppins">Login</h1>
-                    <h5 class="fw-semibold f-poppins">Create a new account? 
+                    <h6 class="fw-semibold f-poppins">Create a new account? 
                         <a class="text-secondary-fusion" href="<?= base_url()?>auth/registration">Sign Up</a> 
-                    </h5>
+                    </h6>
                     <div class="mt-5 w-100 w-xxl-75 mx-auto f-poppins d-flex flex-column justify-content-center align-items-center">
                         <label for="email" >EMAIL ADDRESS</label>
-                        <input id="email" class="input-login mt-3 img-fluid" type="text"  required>
+                        <input name="email" id="email" class="input-login mt-3 img-fluid" type="text"  required>
+                    </div>
+                    <div class="mt-5 f-poppins w-100 w-xxl-75 mx-auto f-poppins d-flex flex-column justify-content-center align-items-center">
+                        <label class="label-email" for="password">PASSWORD </label>
+                        <input name="password" id="password" class="input-login mt-3 img-fluid" type="password" required> <br>
+                    </div>
+                    <!-- <div class="mt-5 f-poppins w-100 w-xxl-75 mx-auto f-poppins d-flex flex-column justify-content-center align-items-center">
+                        <label class="label-email" for="password">PASSWORD </label>
+                        <input id="password" class="input-login mt-3 img-fluid" name="password" type="password" required> <br>
                     </div>
                     <div class="mt-5 f-poppins w-100 w-xxl-75 mx-auto f-poppins d-flex flex-column justify-content-center align-items-center">
                         <label class="label-email" for="password">PASSWORD </label>
                         <input id="password" class="input-login mt-3 img-fluid" name="password" type="password" required> <br>
-                    </div>
+                    </div> -->
                     <div class=" f-poppins w-100 w-xxl-75 mx-auto f-poppins d-flex flex-column justify-content-center align-items-end">
                         <span class="forgot-login" href="">
                             <a href="<?= base_url()?>auth/forgot_password">Forgot Password</a>

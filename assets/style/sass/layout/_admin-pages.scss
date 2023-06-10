@@ -22,8 +22,8 @@
 .splide__slide img {
     width: 100%;
     margin: 0 auto;
-    height: 300px;
-    object-fit: fit;
+    height: 150px;
+    object-fit: cover;
 }
 /*----------------------------------------------------------
 1. Library Use End
@@ -33,22 +33,77 @@
 /*----------------------------------------------------------
 2. Login & Register Page Start
 ------------------------------------------------------------*/ 
+
 .login.wrapper {
-    overflow-x: hidden;
-    div {
-        border-radius: 25px;
+    overflow-y: scroll;
+    height: 100vh;
+    padding: 30px 0px;
+    
+    @include mix.xl {
+        overflow-y: hidden;
     }
+
+    & > div {
+        overflow: scroll;
+        height: fit-content;
+        border-radius: 25px;
+        padding: 20px 0px;
+
+        
+        @include mix.xl {
+            overflow: hidden;
+            height: 85vh;
+            border-radius: 25px;
+            padding: 0px;
+        }
+        .right-side {
+            height: 95%;
+            margin-left: 0px;
+            overflow-y: scroll;
+            padding: 0px 20px;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            
+            @include mix.lg {
+                padding: 0px 50px;
+            }
+            
+            @include mix.xl2 {
+                margin-left: 350px; 
+                width: 63%;
+            }
+        
+            @include mix.xl3 {
+                margin-left: 420px; 
+            }
+        }
+
+    }
+    
 }
 
 
 .bg-contact-wrap {
-    min-height: 100vh;
-    padding: 30px;
+    padding: 20px;
+    height: 90%;
+    width: 400px; 
+    position: fixed; 
+    z-index: 1; 
+    @include mix.xl2 {
+        width: 350px; 
+    }
+
+    @include mix.xl3 {
+        width: 420px; 
+    }
+
 }
 
 .bg-contact {
     background-color: var.$bg-primary-login-fusion;
-    height: 100%;
+    border-radius: 25px;
+    height: 95%;
 }
 
 .forgot-login {
@@ -67,14 +122,14 @@
     }
 }
 .title-side-login-small {
-    font-size: 32px;
+    font-size: 24px;
     
     @include mix.xl2 {
-        font-size: 32px;
+        font-size: 28px;
     }
     
     @include mix.xl3 {
-        font-size: 40px;
+        font-size: 30px;
     }
 }
 
